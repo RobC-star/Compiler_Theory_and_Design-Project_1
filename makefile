@@ -17,3 +17,8 @@ scanner.c: scanner.l
 
 listing.o: listing.cc listing.h
 	g++ -c listing.cc
+
+all: $(OUTPUT)
+
+clean:
+	$(if $(findstring Windows_NT, $(OS)), rm *.o && rm *.c && rm *.exe)
